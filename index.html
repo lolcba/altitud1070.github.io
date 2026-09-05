@@ -96,7 +96,7 @@
         /* --- HERO SECTION --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/hero.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -227,7 +227,40 @@
             margin-top: 2rem;
         }
 
-        /* --- BOTÓN WHATSAPP FLOTANTE --- */
+        /* --- GALERIA DE FOTOS --- */
+        .gallery {
+            padding: 6rem 10%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-grid a {
+            display: block;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .gallery-grid a:hover img {
+            transform: scale(1.06);
+        }
+
+                /* --- BOTÓN WHATSAPP FLOTANTE --- */
         .whatsapp-float {
             position: fixed;
             bottom: 2rem;
@@ -280,6 +313,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#cabaña">La Cabaña</a></li>
                 <li><a href="#comodidades">Comodidades</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
                 <li><a href="#contacto" class="nav-btn">Reservar</a></li>
             </ul>
@@ -322,8 +356,28 @@
             <a href="#contacto" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Consultar Fechas</a>
         </div>
         <div class="about-images">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Interior cabaña">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Vista exterior">
+            <img src="images/about-living.jpg" alt="Living y estar de Altitud 1070">
+            <img src="images/about-bedroom.jpg" alt="Dormitorio luminoso de la cabaña">
+        </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+        <h2 class="section-title">Galería de Fotos</h2>
+        <div class="gallery-grid">
+            <a href="images/gallery-exterior-1.jpg" target="_blank" rel="noopener"><img src="images/gallery-exterior-1.jpg" alt="La cabaña entre las sierras" loading="lazy"></a>
+            <a href="images/gallery-exterior-2.jpg" target="_blank" rel="noopener"><img src="images/gallery-exterior-2.jpg" alt="Entrada y galería exterior" loading="lazy"></a>
+            <a href="images/gallery-bedroom-1.jpg" target="_blank" rel="noopener"><img src="images/gallery-bedroom-1.jpg" alt="Dormitorio principal" loading="lazy"></a>
+            <a href="images/gallery-bedroom-2.jpg" target="_blank" rel="noopener"><img src="images/gallery-bedroom-2.jpg" alt="Habitación con camas twin" loading="lazy"></a>
+            <a href="images/gallery-bedroom-3.jpg" target="_blank" rel="noopener"><img src="images/gallery-bedroom-3.jpg" alt="Segundo dormitorio luminoso" loading="lazy"></a>
+            <a href="images/gallery-breakfast-1.jpg" target="_blank" rel="noopener"><img src="images/gallery-breakfast-1.jpg" alt="Desayuno en la cabaña" loading="lazy"></a>
+            <a href="images/gallery-breakfast-2.jpg" target="_blank" rel="noopener"><img src="images/gallery-breakfast-2.jpg" alt="Mesa dulce de bienvenida" loading="lazy"></a>
+            <a href="images/gallery-decor.jpg" target="_blank" rel="noopener"><img src="images/gallery-decor.jpg" alt="Detalles de decoración" loading="lazy"></a>
+            <a href="images/gallery-garden.jpg" target="_blank" rel="noopener"><img src="images/gallery-garden.jpg" alt="Jardín y entorno natural" loading="lazy"></a>
+            <a href="images/gallery-horses.jpg" target="_blank" rel="noopener"><img src="images/gallery-horses.jpg" alt="Caballos en los alrededores" loading="lazy"></a>
+            <a href="images/gallery-river.jpg" target="_blank" rel="noopener"><img src="images/gallery-river.jpg" alt="El río a pocos pasos" loading="lazy"></a>
+            <a href="images/gallery-deck.jpg" target="_blank" rel="noopener"><img src="images/gallery-deck.jpg" alt="Deck con vista a las sierras" loading="lazy"></a>
+            <a href="images/gallery-dinner.jpg" target="_blank" rel="noopener"><img src="images/gallery-dinner.jpg" alt="Cena a la luz de las velas" loading="lazy"></a>
+            <a href="images/gallery-flowers.jpg" target="_blank" rel="noopener"><img src="images/gallery-flowers.jpg" alt="Flora serrana" loading="lazy"></a>
         </div>
     </section>
 
