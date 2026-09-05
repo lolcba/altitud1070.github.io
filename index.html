@@ -234,10 +234,46 @@
             text-align: center;
         }
 
-        .location p {
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            text-align: left;
+            align-items: start;
+        }
+
+        .location-text p {
             color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-distances {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .location-distances li {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .location-distances i {
+            color: var(--accent);
+            width: 1.2rem;
+            text-align: center;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 420px;
+            border: 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
                 /* --- GALERIA DE FOTOS --- */
@@ -313,6 +349,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .about { grid-template-columns: 1fr; }
+            .location-grid { grid-template-columns: 1fr; }
             nav ul { display: none; } /* En producción real requeriría menú hamburguesa interactivo */
         }
     </style>
@@ -396,8 +433,22 @@
 
     <section id="ubicacion" class="location">
         <h2 class="section-title">Ubicación</h2>
-        <p>Altitud 1070 está en las Sierras de Córdoba, Argentina, en un entorno natural privilegiado junto al río y rodeada de montañas. Es el punto de partida ideal para desconectar, disfrutar del aire puro y explorar los principales atractivos de la región, a pocos minutos de distancia.</p>
-        <a href="https://wa.me/5493546436092?text=Hola,%20quiero%20consultar%20c%C3%B3mo%20llegar%20a%20Altitud%201070" class="btn-primary" target="_blank" rel="noopener">Consultar Cómo Llegar</a>
+        <div class="location-grid">
+            <div class="location-text">
+                <p>Altitud 1070 está en las Sierras de Córdoba, Argentina, en un entorno natural privilegiado junto al río y rodeada de montañas. Es el punto de partida ideal para desconectar y explorar los principales atractivos de la región.</p>
+                <p><strong>Estamos a:</strong></p>
+                <ul class="location-distances">
+                    <li><i class="fas fa-map-marker-alt"></i> 13 km de La Cumbrecita</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 27 km de Villa General Belgrano</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 110 km de Córdoba Capital</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 km del Aeropuerto Internacional de Córdoba</li>
+                </ul>
+                <a href="https://wa.me/5493546436092?text=Hola,%20quiero%20consultar%20c%C3%B3mo%20llegar%20a%20Altitud%201070" class="btn-primary" target="_blank" rel="noopener">Consultar Cómo Llegar</a>
+            </div>
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/d/u/0/viewer?mid=1g8anSO80yFqEPd0pxwSX6EZ-Y1DqWz9O&femb=1&ll=-31.961731300000018%2C-64.71933849999999&z=17" loading="lazy" title="Mapa de ubicación de Altitud 1070" allowfullscreen></iframe>
+            </div>
+        </div>
     </section>
 
     <a href="https://wa.me/5493546436092?text=Hola,%20quiero%20consultar%20disponibilidad%20en%20Altitud%201070" class="whatsapp-float" target="_blank" aria-label="Chat de WhatsApp">
