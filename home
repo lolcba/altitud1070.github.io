@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altitud 1070 | Cabaña en las Sierras de Córdoba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2C3531;
+            --accent: #A3704C;
+            --bg-light: #F9F8F6;
+            --text-main: #333333;
+            --white: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+        }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: var(--white) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-btn:hover {
+            background-color: #8c5d3b;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #8c5d3b;
+        }
+
+        /* --- SECCIÓN COMODIDADES --- */
+        .amenities {
+            padding: 5rem 10%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 0.5rem auto 0;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .amenity-card {
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .amenity-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .amenity-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* --- SECCIÓN LA CABAÑA --- */
+        .about {
+            padding: 6rem 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+        }
+
+        .about-images img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-images img:nth-child(2) {
+            margin-top: 2rem;
+        }
+
+        /* --- BOTÓN WHATSAPP FLOTANTE --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25d366;
+            color: white;
+            padding: 1rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 999;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about { grid-template-columns: 1fr; }
+            nav ul { display: none; } /* En producción real requeriría menú hamburguesa interactivo */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">ALTITUD 1070</a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cabaña">La Cabaña</a></li>
+                <li><a href="#comodidades">Comodidades</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto" class="nav-btn">Reservar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>ALTITUD 1070</h1>
+        <p>Tu refugio exclusivo en las Sierras de Córdoba</p>
+        <a href="#contacto" class="btn-primary">Reservar Ahora</a>
+    </section>
+
+    <section id="comodidades" class="amenities">
+        <h2 class="section-title">Comodidades Destacadas</h2>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <i class="fas fa-fire"></i>
+                <h4>Chimenea</h4>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-utensils"></i>
+                <h4>Cocina Equipada</h4>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-wifi"></i>
+                <h4>Wi-Fi Alta Velocidad</h4>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-parking"></i>
+                <h4>Estacionamiento Privado</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="cabaña" class="about">
+        <div class="about-text">
+            <h2>Un espacio pensado para el desconecte total</h2>
+            <p>Ubicada en un entorno natural privilegiado, Altitud 1070 combina la rústica belleza de la montaña con todas las comodidades modernas que necesitás para una estadía inolvidable.</p>
+            <p>Disfruta de atardeceres únicos, aire puro y la tranquilidad absoluta de las sierras cordobesas, a pocos minutos de los principales atractivos de la región.</p>
+            <a href="#contacto" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Consultar Fechas</a>
+        </div>
+        <div class="about-images">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Interior cabaña">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Vista exterior">
+        </div>
+    </section>
+
+    <a href="https://wa.me/5493510000000?text=Hola,%20quiero%20consultar%20disponibilidad%20en%20Altitud%201070" class="whatsapp-float" target="_blank" aria-label="Chat de WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer id="contacto">
+        <p>&copy; 2026 Altitud 1070 - Todos los derechos reservados. Sierras de Córdoba, Argentina.</p>
+    </footer>
+
+</body>
+</html>
