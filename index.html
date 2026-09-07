@@ -276,6 +276,27 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
+        .capacity-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .capacity-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            margin-bottom: 0.8rem;
+            color: #555;
+        }
+
+        .capacity-list i {
+            color: var(--accent);
+            margin-top: 0.25rem;
+            width: 1.2rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
                 /* --- GALERIA DE FOTOS --- */
         .gallery {
             padding: 6rem 10%;
@@ -307,6 +328,95 @@
 
         .gallery-grid a:hover img {
             transform: scale(1.06);
+        }
+
+        /* --- TESTIMONIOS --- */
+        .testimonials {
+            padding: 6rem 10%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card i.fa-quote-left {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .testimonial-card p {
+            color: #555;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-card h4 {
+            font-size: 0.95rem;
+            color: var(--primary);
+        }
+
+        /* --- INFORMACION UTIL / POLITICAS --- */
+        .policies {
+            padding: 3rem 10%;
+            background-color: var(--primary);
+            text-align: center;
+        }
+
+        .policies .section-title {
+            color: var(--white);
+        }
+
+        .policies-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 1rem;
+        }
+
+        .policies-grid div {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        .policies-grid i {
+            color: var(--accent);
+        }
+
+        /* --- REDES SOCIALES (FOOTER) --- */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
         }
 
                 /* --- BOTÓN WHATSAPP FLOTANTE --- */
@@ -364,6 +474,7 @@
                 <li><a href="#cabaña">La Cabaña</a></li>
                 <li><a href="#comodidades">Comodidades</a></li>
                 <li><a href="#galeria">Galería</a></li>
+                <li><a href="#opiniones">Opiniones</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
                 <li><a href="#contacto" class="nav-btn">Reservar</a></li>
             </ul>
@@ -395,6 +506,22 @@
                 <i class="fas fa-parking"></i>
                 <h4>Estacionamiento Privado</h4>
             </div>
+            <div class="amenity-card">
+                <i class="fas fa-fire-burner"></i>
+                <h4>Asador</h4>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-bed"></i>
+                <h4>Ropa de Cama y Toallas</h4>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-tv"></i>
+                <h4>TV Satelital</h4>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-bread-slice"></i>
+                <h4>Desayuno Incluido</h4>
+            </div>
         </div>
     </section>
 
@@ -403,6 +530,11 @@
             <h2>Un espacio pensado para el desconecte total</h2>
             <p>Ubicada en un entorno natural privilegiado, Altitud 1070 combina la rústica belleza de la montaña con todas las comodidades modernas que necesitás para una estadía inolvidable.</p>
             <p>Disfruta de atardeceres únicos, aire puro y la tranquilidad absoluta de las sierras cordobesas, a pocos minutos de los principales atractivos de la región.</p>
+            <ul class="capacity-list">
+                <li><i class="fas fa-users"></i> Hasta 4 personas</li>
+                <li><i class="fas fa-door-open"></i> Planta baja: cocina-comedor, mini-living y galería con vista al río</li>
+                <li><i class="fas fa-door-open"></i> Planta alta: dormitorio matrimonial con balcón al río, segundo dormitorio con dos camas y baño completo</li>
+            </ul>
             <a href="#contacto" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Consultar Fechas</a>
         </div>
         <div class="about-images">
@@ -431,11 +563,42 @@
         </div>
     </section>
 
+    <section id="opiniones" class="testimonials">
+        <h2 class="section-title">Lo Que Dicen Nuestros Huéspedes</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"La cabaña muy cómoda, con todo lo necesario para hacer de la estadía un lujo. Ubicada en un lugar privilegiado, para relajarse, olvidarse de todo por unos días y disfrutar de la naturaleza cordobesa."</p>
+                <h4>— Agustina Brinatti</h4>
+            </div>
+            <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"El lugar es un paraíso para los que nos gusta la tranquilidad; la cabaña es hermosa, muy amplia, muy cómoda, y en un lugar soñado. Tiene todas las comodidades para pasar unos días espectaculares. ¡Espero poder volver pronto!"</p>
+                <h4>— Mabel Copelotti</h4>
+            </div>
+            <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"Espectacular lugar para relajarse! La cabaña hermosa, más que equipada y la atención muy buena. La pasamos genial! Gracias por todo!"</p>
+                <h4>— Jesica Chiappero</h4>
+            </div>
+            <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"Hermoso lugar de nuestras sierras. La cabaña cuenta con dos plantas: en planta alta dos dormitorios y un baño, con un hermoso balcón para contemplar amaneceres y atardeceres; en planta baja, cocina-comedor y un segundo baño. La cabaña está muy bien equipada, tiene de todo. Calidad, calidez, comodidad y excelente atención. ¡Súper recomendable!"</p>
+                <h4>— Laura Cecilia Lopez</h4>
+            </div>
+            <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"Las comodidades, la limpieza, el lugar bellísimo y la atención personal y encantadora."</p>
+                <h4>— Marita Armendariz</h4>
+            </div>
+        </div>
+    </section>
+
     <section id="ubicacion" class="location">
         <h2 class="section-title">Ubicación</h2>
         <div class="location-grid">
             <div class="location-text">
-                <p>Altitud 1070 está en las Sierras de Córdoba, Argentina, en un entorno natural privilegiado junto al río y rodeada de montañas. Es el punto de partida ideal para desconectar y explorar los principales atractivos de la región.</p>
+                <p>Altitud 1070 está en Intiyaco, en las Sierras de Córdoba, sobre la vera del río Los Reartes —de aguas cristalinas ideales para bañarse, con playitas para descansar— y rodeada de montañas. Es el punto de partida ideal para desconectar, a mitad de camino entre La Cumbrecita y Villa General Belgrano.</p>
                 <p><strong>Estamos a:</strong></p>
                 <ul class="location-distances">
                     <li><i class="fas fa-map-marker-alt"></i> 13 km de La Cumbrecita</li>
@@ -451,11 +614,25 @@
         </div>
     </section>
 
+    <section class="policies">
+        <h2 class="section-title">Información Útil</h2>
+        <div class="policies-grid">
+            <div><i class="fas fa-clock"></i> Check-in: 15hs</div>
+            <div><i class="fas fa-clock"></i> Check-out: 10hs</div>
+            <div><i class="fas fa-paw"></i> No se aceptan mascotas</div>
+        </div>
+    </section>
+
     <a href="https://wa.me/5493546436092?text=Hola,%20quiero%20consultar%20disponibilidad%20en%20Altitud%201070" class="whatsapp-float" target="_blank" aria-label="Chat de WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <footer id="contacto">
+        <div class="social-links">
+            <a href="https://instagram.com/altitud1070intiyaco/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/altitud1070Intiyaco/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:altitud1070@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
         <p>&copy; 2026 Altitud 1070 - Todos los derechos reservados. Sierras de Córdoba, Argentina.</p>
     </footer>
 
